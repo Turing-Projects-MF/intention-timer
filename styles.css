@@ -1,0 +1,22 @@
+/* font-family: 'Montserrat', sans-serif; */
+body {
+  margin: 0;
+}
+
+main {
+  background-color: cornflowerblue;
+  display: flex;
+}
+
+aside {
+  background-color: lightpink;
+}
+
+.panel-title {
+  background-color: grey;
+}
+
+.left-panel {
+  background-color: red;
+  margin: 10px;
+}
