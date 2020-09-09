@@ -48,6 +48,8 @@ section {
   background-color: #46424D;
   margin: 10px;
   margin-left: 20px;
+  padding-left: 75px;
+  padding-right: 75px;
 }
 
 header {
@@ -64,23 +66,68 @@ header {
 img {
   width: 25px;
   height: 25px;
-  margin: 5px 0 5px 0;
+  margin: 5px 0 0 0;
 }
 
 .button-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 button {
   background-color: #46424D;
   border-color: #FFF;
   border-style: solid;
+  border-radius: 5px;
   color: #FFF;
-  width: 175px;
-  height: 80px;
+  width: 150px;
+  height: 65px;
 }
 
 h4 {
   margin: 5px 0 5px 0;
+}
+
+.test {
+  margin-left: 75px;
+}
+.category-choice {
+  padding-top: 38px;
+  color: #FFF;
+}
+
+
+.middle-box {
+  display:flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+span {
+  color: #FFF;
+}
+
+#activity-choice, #total-minutes, #total-seconds {
+  background-color: #46424D;
+  border: none;
+  border-bottom: 1px solid #FFF;
+}
+
+.time-box {
+  display: flex;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 60px;
+}
+
+#total-minutes {
+  margin-right: 80px;
+}
+
+input {
+  margin-top: 15px;
 }
