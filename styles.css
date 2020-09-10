@@ -71,13 +71,12 @@ header {
   padding: 10px;
 }
 
-
 .button-box {
   display: flex;
   justify-content: space-between;
 }
 
-#study-button, #meditate-button, #exercise-button{
+.study-button, .meditate-button, .exercise-button{
   background-color: #46424D;
   border-color: #FFF;
   border-style: solid;
@@ -85,46 +84,33 @@ header {
   color: #FFF;
   width: 150px;
   height: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-repeat: no-repeat;
-  background-position: right 50% top 20%;
-  background-size: 25px;
 }
-
-#study-button {
-  background-image: url('./assets/study.svg');
-}
-
-#meditate-button {
-  background-image: url('./assets/meditate.svg');
-}
-
-#exercise-button {
-  background-image: url('./assets/exercise.svg');
-}
-
-#study-button:hover {
+.study-style {
   border-color: #B3FD78;
   color: #B3FD78;
-  background-image: url('./assets/study-active.svg');
+  outline: none;
+  box-shadow: none;
 }
-#meditate-button:hover {
+.meditate-style {
   border-color: #C278FD;
   color: #C278FD;
-  background-image: url("./assets/meditate-active.svg")
+  outline: none;
+  box-shadow: none;
 }
-#exercise-button:hover {
+.exercise-style {
   border-color: #FD8078;
   color: #FD8078;
-  background-image: url('./assets/exercise-active.svg');
+  outline: none;
+  box-shadow: none;
 }
-
 h4 {
-  margin: 0 0 8px 0;
+  margin: 5px 0 0 0;
 }
 
+img {
+  height: 25px;
+  width: 25px;
+}
 
 .category-choice {
   padding-top: 38px;
