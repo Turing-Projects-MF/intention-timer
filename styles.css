@@ -26,7 +26,7 @@ main {
 .right-panel {
   flex-grow: 1;
   background-color: #2B2733;
-  border-left: 1px;
+  border-left: 3px;
   border-color: #46424D;
   border-style: solid;
   border-top: 0
@@ -40,7 +40,8 @@ section {
 
 .panel-title {
   background-color: #2B2733;
-  color: #FFF;
+  color: #CBC9CF;
+  font-size: 21px;
   margin: 0;
   padding-top: 20px;
   padding-left: 20px;
@@ -49,9 +50,12 @@ section {
 
 
 .left-panel {
+  display: flex;
+  flex-direction: column;
   background-color: #46424D;
   margin: 10px;
   margin-left: 20px;
+  margin-right: 20px;
   padding-left: 75px;
   padding-right: 75px;
   margin-bottom: 50px;
@@ -89,6 +93,19 @@ img {
   width: 150px;
   height: 65px;
 }
+#study-button:hover {
+  border-color: #B3FD78;
+  color: #B3FD78;
+}
+#meditate-button:hover {
+  border-color: #C278FD;
+  color: #C278FD;
+  /* background-image: url("./assets/meditate.svg") */
+}
+#exercise-button:hover {
+  border-color: #FD8078;
+  color: #FD8078;
+}
 
 h4 {
   margin: 5px 0 5px 0;
@@ -113,6 +130,7 @@ span {
 
 #activity-choice, #total-minutes, #total-seconds {
   background-color: #46424D;
+  color: #CBC9CF;
   border: none;
   border-bottom: 1px solid #FFF;
 }
@@ -137,6 +155,16 @@ input {
 }
 
 .start-activity-button {
-  position: absolute;
-  right: 75px;
+  color: #46424D;
+  align-self: flex-end;
+  right: 85px;
+  bottom: 100px;
+  height: 36px;
+  width: 200px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+.right-text {
+  color: #CBC9CF;
+  text-align: center;
 }
