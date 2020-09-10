@@ -93,6 +93,19 @@ img {
   width: 150px;
   height: 65px;
 }
+#study-button:hover {
+  border-color: #B3FD78;
+  color: #B3FD78;
+}
+#meditate-button:hover {
+  border-color: #C278FD;
+  color: #C278FD;
+  /* background-image: url("./assets/meditate.svg") */
+}
+#exercise-button:hover {
+  border-color: #FD8078;
+  color: #FD8078;
+}
 
 h4 {
   margin: 5px 0 5px 0;
