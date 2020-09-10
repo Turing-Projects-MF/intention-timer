@@ -1,22 +1,142 @@
-/* font-family: 'Montserrat', sans-serif; */
+/* Main background: #2B2733
+Text on main background: #CBC9CF
+Header, cards: #46424D
+Card shadow: #26222D
+Text on header and cards: #FFF
+Study: #B3FD78
+Meditate: #C278FD
+Exercise: #FD8078
+Error: #EFB7EC
+font-family: 'Montserrat', sans-serif; */
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
   margin: 0;
+  height: 100%;
 }
 
 main {
-  background-color: cornflowerblue;
+  background-color: #2B2733;
   display: flex;
+  height: 100%
 }
 
-aside {
-  background-color: lightpink;
+.right-panel {
+  flex-grow: 1;
+  background-color: #2B2733;
+  border-left: 1px;
+  border-color: #46424D;
+  border-style: solid;
+  border-top: 0
+}
+
+section {
+  flex-grow: 2;
+  position: relative;
+  overflow: auto;
 }
 
 .panel-title {
-  background-color: grey;
+  background-color: #2B2733;
+  color: #FFF;
+  margin: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 5px;
 }
 
+
 .left-panel {
-  background-color: red;
+  background-color: #46424D;
   margin: 10px;
+  margin-left: 20px;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-bottom: 50px;
+  height: 100%
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #46424D;
+  color: #FFF;
+  font-weight: 300;
+  padding: 10px;
+}
+
+
+
+img {
+  width: 25px;
+  height: 25px;
+  margin: 5px 0 0 0;
+}
+
+.button-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+#study-button, #meditate-button, #exercise-button{
+  background-color: #46424D;
+  border-color: #FFF;
+  border-style: solid;
+  border-radius: 5px;
+  color: #FFF;
+  width: 150px;
+  height: 65px;
+}
+
+h4 {
+  margin: 5px 0 5px 0;
+}
+
+
+.category-choice {
+  padding-top: 38px;
+  color: #FFF;
+}
+
+
+.middle-box {
+  display:flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+span {
+  color: #FFF;
+}
+
+#activity-choice, #total-minutes, #total-seconds {
+  background-color: #46424D;
+  border: none;
+  border-bottom: 1px solid #FFF;
+}
+
+.time-box {
+  display: flex;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 60px;
+}
+
+#total-minutes {
+  margin-right: 80px;
+}
+
+input {
+  margin-top: 15px;
+}
+
+.start-activity-button {
+  position: absolute;
+  right: 75px;
 }
