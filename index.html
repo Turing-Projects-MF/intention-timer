@@ -31,11 +31,11 @@
           <div class="time-box">
             <div class="time-container">
               <label for="total-minutes"><span>Minutes</span></label>
-              <input type="number" id="total-minutes">
+              <input type="number" onkeydown="return event.keyCode !== 69" min='0' max='59' id="total-minutes">
             </div>
             <div class="time-container">
               <label for="total-seconds"><span>Seconds</span></label>
-              <input type="number" id="total-seconds">
+              <input type="number" onkeydown="return event.keyCode !== 69" min='0' max='59' id="total-seconds">
             </div>
           </div>
           <button class="start-activity-button">START ACTIVITY</button>

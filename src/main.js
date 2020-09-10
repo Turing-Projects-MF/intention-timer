@@ -16,13 +16,29 @@ exerciseButton.addEventListener('click', buttonColorizer)
 
 function buttonColorizer(event) {
   if (event.target === studyButton) {
+    buttonUnColorizer();
     studyButton.classList.add('study-style');
     studyImage.src = './assets/study-active.svg';
   } if (event.target === meditateButton) {
+    buttonUnColorizer();
     meditateButton.classList.add('meditate-style');
       meditateImage.src = './assets/meditate-active.svg';
   } if (event.target === exerciseButton) {
+    buttonUnColorizer();
     exerciseButton.classList.add('exercise-style');
       exerciseImage.src = './assets/exercise-active.svg';
   }
+}
+
+function buttonUnColorizer() {
+  studyButton.classList.remove('study-style');
+  meditateButton.classList.remove('meditate-style');
+  exerciseButton.classList.remove('exercise-style');
+  imageHandler();
+}
+
+function imageHandler() {
+  studyImage.src = './assets/study.svg';
+  meditateImage.src = './assets/meditate.svg';
+  exerciseImage.src = './assets/exercise.svg';
 }
