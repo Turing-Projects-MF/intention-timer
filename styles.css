@@ -85,46 +85,16 @@ header {
   color: #FFF;
   width: 150px;
   height: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-repeat: no-repeat;
-  background-position: right 50% top 20%;
-  background-size: 25px;
-}
-
-#study-button {
-  background-image: url('./assets/study.svg');
-}
-
-#meditate-button {
-  background-image: url('./assets/meditate.svg');
-}
-
-#exercise-button {
-  background-image: url('./assets/exercise.svg');
-}
-
-#study-button:hover {
-  border-color: #B3FD78;
-  color: #B3FD78;
-  background-image: url('./assets/study-active.svg');
-}
-#meditate-button:hover {
-  border-color: #C278FD;
-  color: #C278FD;
-  background-image: url("./assets/meditate-active.svg")
-}
-#exercise-button:hover {
-  border-color: #FD8078;
-  color: #FD8078;
-  background-image: url('./assets/exercise-active.svg');
 }
 
 h4 {
-  margin: 0 0 8px 0;
+  margin: 5px 0 0 0;
 }
 
+img {
+  height: 25px;
+  width: 25px;
+}
 
 .category-choice {
   padding-top: 38px;
