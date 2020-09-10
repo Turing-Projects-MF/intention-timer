@@ -71,13 +71,12 @@ header {
   padding: 10px;
 }
 
-
 .button-box {
   display: flex;
   justify-content: space-between;
 }
 
-#study-button, #meditate-button, #exercise-button{
+.study-button, .meditate-button, .exercise-button{
   background-color: #46424D;
   border-color: #FFF;
   border-style: solid;
@@ -86,7 +85,24 @@ header {
   width: 150px;
   height: 65px;
 }
-
+.study-style {
+  border-color: #B3FD78;
+  color: #B3FD78;
+  outline: none;
+  box-shadow: none;
+}
+.meditate-style {
+  border-color: #C278FD;
+  color: #C278FD;
+  outline: none;
+  box-shadow: none;
+}
+.exercise-style {
+  border-color: #FD8078;
+  color: #FD8078;
+  outline: none;
+  box-shadow: none;
+}
 h4 {
   margin: 5px 0 0 0;
 }
