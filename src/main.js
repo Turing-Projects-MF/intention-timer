@@ -13,8 +13,8 @@ var descriptionChosen = document.querySelector('#activity-choice');
 var minutesChosen = document.querySelector('#total-minutes');
 var secondsChosen = document.querySelector('#total-seconds');
 
-var savedActivities = [];
-var activity;
+var pastActivity = [];
+var currentActivity;
 
 // for (var i = 0; i < activityButtons.length; i++) {
 //   activityButtons[i].addEventListener('click', buttonColorizer);
@@ -60,16 +60,10 @@ function chooseActivity() {
   var descriptionInput = descriptionChosen.value;
   var minutesInput = minutesChosen.value;
   var secondsInput = secondsChosen.value;
-  activity = new Activity(activityInput, descriptionInput, minutesInput, secondsInput);
-console.log(activity)}
-
-function buttonCategorizer(event) {
-  var selection = ''
-  if (event.target === studyButton) {
-    this.category = 'study';
-  } if (event.target === meditateButton) {
-    this.category = 'meditate';
-  } if (event.target === exerciseButton) {
-    this.category = 'exercise';
-  }
+  currentActivity = new Activity(activityInput, descriptionInput, minutesInput, secondsInput);
+pastActivity.push(currentActivity);
+//new activity = Current Activity
+// hide left panel
+//show Current Activity, 
+// console.log(activity);
 }

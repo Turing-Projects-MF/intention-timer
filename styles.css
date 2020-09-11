@@ -49,7 +49,7 @@ section {
 }
 
 
-.left-panel {
+.left-panel, .timer-panel {
   display: flex;
   flex-direction: column;
   background-color: #46424D;
@@ -76,7 +76,7 @@ header {
   justify-content: space-between;
 }
 
-.study-button, .meditate-button, .exercise-button{
+.study-button, .meditate-button, .exercise-button {
   background-color: #46424D;
   border-color: #FFF;
   border-style: solid;
@@ -116,7 +116,6 @@ img {
   padding-top: 38px;
   color: #FFF;
 }
-
 
 .middle-box {
   display:flex;
@@ -167,4 +166,7 @@ input {
 .right-text {
   color: #CBC9CF;
   text-align: center;
+}
+.hidden {
+  display: none;
 }
