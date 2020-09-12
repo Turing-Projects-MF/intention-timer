@@ -12,6 +12,8 @@ var startActivityButton = document.querySelector('.start-activity-button');
 var descriptionChosen = document.querySelector('#activity-choice');
 var minutesChosen = document.querySelector('#total-minutes');
 var secondsChosen = document.querySelector('#total-seconds');
+var timerPanel = document.querySelector('.timer-panel')
+var leftPanel = document.querySelector('.left-panel')
 
 var pastActivity = [];
 var currentActivity;
@@ -61,9 +63,12 @@ function chooseActivity() {
   var minutesInput = minutesChosen.value;
   var secondsInput = secondsChosen.value;
   currentActivity = new Activity(activityInput, descriptionInput, minutesInput, secondsInput);
-pastActivity.push(currentActivity);
+  pastActivity.push(currentActivity);
 //new activity = Current Activity
-// hide left panel
-//show Current Activity, Timer
+  displayHandler();
 // console.log(activity);
+}
+function displayHandler() {
+  timerPanel.classList.remove('hidden');
+  leftPanel.classList.add('hidden');
 }
