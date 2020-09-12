@@ -12,8 +12,16 @@ var startActivityButton = document.querySelector('.start-activity-button');
 var descriptionChosen = document.querySelector('#activity-choice');
 var minutesChosen = document.querySelector('#total-minutes');
 var secondsChosen = document.querySelector('#total-seconds');
-var timerPanel = document.querySelector('.timer-panel')
-var leftPanel = document.querySelector('.left-panel')
+var timerPanel = document.querySelector('.timer-panel');
+var leftPanel = document.querySelector('.left-panel');
+var currentTimer = document.querySelector('h1');
+var activityDescription = document.querySelector('#activity-description');
+var inputFields = document.getElementsByTagName('input');
+var buttonTags = document.getElementsByTagName('button');
+var errorContainer = document.querySelector('.error-container');
+var errorMessage = document.querySelector('.error-message');
+var errorImage = document.querySelector('.error-image');
+
 
 var pastActivity = [];
 var currentActivity;
@@ -58,17 +66,47 @@ function imageHandler() {
 }
 
 function chooseActivity() {
+  inputValidator();
   var activityInput = document.querySelector('.selected').value;
   var descriptionInput = descriptionChosen.value;
   var minutesInput = minutesChosen.value;
   var secondsInput = secondsChosen.value;
   currentActivity = new Activity(activityInput, descriptionInput, minutesInput, secondsInput);
   pastActivity.push(currentActivity);
-//new activity = Current Activity
-  displayHandler();
+  if (errorContainer.classList.contains('hidden')) {
+    displayCountDown();
+    displayHandler();
+  }
+
+
 // console.log(activity);
 }
+
 function displayHandler() {
   timerPanel.classList.remove('hidden');
   leftPanel.classList.add('hidden');
+}
+
+function displayCountDown() {
+  var timerActivity = `${currentActivity.description}`;
+  activityDescription.innerHTML = timerActivity;
+  var minutes = currentActivity.minutes < 10 ? "0" + currentActivity.minutes : currentActivity.minutes;
+  var seconds = currentActivity.seconds < 10 ? "0" + currentActivity.seconds : currentActivity.seconds;
+  var countDown = `${minutes}:${seconds}`;
+  currentTimer.innerHTML = countDown;
+}
+
+function inputValidator() {
+    if (descriptionChosen.value == '' || minutesChosen.value == '' || secondsChosen.value == '') {
+      errorContainer.classList.remove('hidden');
+    }
+
+  for (var i = 0; i < buttonTags.length; i++) {
+    if (buttonTags[i].classList.contains('selected')) {
+      return
+
+  } else {
+      errorContainer.classList.remove('hidden');
+    }
+  }
 }

@@ -206,5 +206,21 @@ input {
   text-align: center;
 }
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.error-image {
+  height: 20px;
+  width: 20px;
+  margin-top: 14px;
+  margin-right: 10px;
+}
+
+.error-container {
+  display: flex;
+}
+
+.error-message {
+  color: #EFB7EC;
+  margin-top: 18px;
 }
