@@ -64,6 +64,6 @@ function chooseActivity() {
 pastActivity.push(currentActivity);
 //new activity = Current Activity
 // hide left panel
-//show Current Activity, 
+//show Current Activity, Timer
 // console.log(activity);
 }
