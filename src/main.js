@@ -67,7 +67,6 @@ function chooseActivity() {
   currentActivity = new Activity(activityInput, descriptionInput, minutesInput, secondsInput);
   pastActivity.push(currentActivity);
   displayCountDown();
-//new activity = Current Activity
   displayHandler();
 // console.log(activity);
 }
