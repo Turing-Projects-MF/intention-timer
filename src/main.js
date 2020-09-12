@@ -12,8 +12,10 @@ var startActivityButton = document.querySelector('.start-activity-button');
 var descriptionChosen = document.querySelector('#activity-choice');
 var minutesChosen = document.querySelector('#total-minutes');
 var secondsChosen = document.querySelector('#total-seconds');
-var timerPanel = document.querySelector('.timer-panel')
-var leftPanel = document.querySelector('.left-panel')
+var timerPanel = document.querySelector('.timer-panel');
+var leftPanel = document.querySelector('.left-panel');
+var currentTimer = document.querySelector('h1');
+var activityDescription = document.querySelector('#activity-description');
 
 var pastActivity = [];
 var currentActivity;
@@ -64,6 +66,7 @@ function chooseActivity() {
   var secondsInput = secondsChosen.value;
   currentActivity = new Activity(activityInput, descriptionInput, minutesInput, secondsInput);
   pastActivity.push(currentActivity);
+  displayCountDown();
 //new activity = Current Activity
   displayHandler();
 // console.log(activity);
@@ -71,4 +74,12 @@ function chooseActivity() {
 function displayHandler() {
   timerPanel.classList.remove('hidden');
   leftPanel.classList.add('hidden');
+}
+function displayCountDown() {
+  var timerActivity = `${currentActivity.description}`;
+  activityDescription.innerHTML = timerActivity;
+  var minutes = currentActivity.minutes < 10 ? "0" + currentActivity.minutes : currentActivity.minutes;
+  var seconds = currentActivity.seconds < 10 ? "0" + currentActivity.seconds : currentActivity.seconds;
+  var countDown = `${minutes}:${seconds}`;
+  currentTimer.innerHTML = countDown;
 }
