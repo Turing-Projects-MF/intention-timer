@@ -97,7 +97,7 @@ function displayCountDown() {
 }
 
 function inputValidator() {
-    if (descriptionChosen.value === '' || minutesChosen.value === '' || secondsChosen.value === '') {
+    if (descriptionChosen.value == '' || minutesChosen.value == '' || secondsChosen.value == '') {
       errorContainer.classList.remove('hidden');
     }
 
