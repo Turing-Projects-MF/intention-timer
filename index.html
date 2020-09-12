@@ -11,17 +11,17 @@
         <div class="left-panel">
           <h3 class="category-choice">Select a category:</h3>
           <div class="button-box">
-            <button class="study-button">
+            <button class="study-button" value="Study">
               <img class="study-img" src="./assets/study.svg">
-              <h4>Study</h4>
+              <h4 id="study-text">Study</h4>
             </button>
-            <button class="meditate-button">
+            <button class="meditate-button" value="Meditate">
               <img class="meditate-img" src="./assets/meditate.svg">
-              <h4>Meditate</h4>
+              <h4 id="meditate-text">Meditate</h4>
             </button>
-            <button class="exercise-button">
+            <button class="exercise-button" value="Exercise">
               <img class="exercise-img" src="./assets/exercise.svg">
-              <h4>Exercise</h4>
+              <h4 id="exercise-text">Exercise</h4>
             </button>
           </div>
           <div class="middle-box">
@@ -40,8 +40,12 @@
           </div>
           <button class="start-activity-button">START ACTIVITY</button>
         </div>
+        <div class="timer-panel hidden">
+          <p id='activity-description'>Deep Breathing</p>
+          <h1>05:00</h1>
+          <button class="start-button">START</button>
+        </div>
       </section>
-      <!-- hidden view -->
 
       <aside class="right-panel">
         <p class="panel-title">Past Activities</p>
