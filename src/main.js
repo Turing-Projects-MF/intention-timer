@@ -23,20 +23,14 @@ var errorMessage = document.querySelector('.error-message');
 var errorImage = document.querySelector('.error-image');
 var startButton = document.querySelector('.start-button');
 
-
 var pastActivity = [];
 var currentActivity;
-
-// for (var i = 0; i < activityButtons.length; i++) {
-//   activityButtons[i].addEventListener('click', buttonColorizer);
-// };
 
 studyButton.addEventListener('click', buttonColorizer);
 meditateButton.addEventListener('click', buttonColorizer);
 exerciseButton.addEventListener('click', buttonColorizer);
 startActivityButton.addEventListener('click', chooseActivity);
 startButton.addEventListener('click', liveTimer);
-
 
 function buttonColorizer(event) {
   if (event.target === studyButton || event.target === studyText || event.target === studyImage) {
@@ -79,9 +73,6 @@ function chooseActivity() {
     displayCountDown();
     displayHandler();
   }
-
-
-// console.log(activity);
 }
 
 function displayHandler() {
