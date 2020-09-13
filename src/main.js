@@ -22,6 +22,7 @@ var errorContainer = document.querySelector('.error-container');
 var errorMessage = document.querySelector('.error-message');
 var errorImage = document.querySelector('.error-image');
 var startButton = document.querySelector('.start-button');
+var leftTitle = document.querySelector('#left-title');
 
 var pastActivity = [];
 var currentActivity;
@@ -81,6 +82,7 @@ function displayHandler() {
 }
 
 function displayCountDown() {
+  leftTitle.innerHTML = 'Current Activity';
   var timerActivity = `${currentActivity.description}`;
   activityDescription.innerHTML = timerActivity;
   var minutes = currentActivity.minutes < 10 ? "0" + currentActivity.minutes : currentActivity.minutes;
