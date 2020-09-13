@@ -21,20 +21,16 @@ var buttonTags = document.getElementsByTagName('button');
 var errorContainer = document.querySelector('.error-container');
 var errorMessage = document.querySelector('.error-message');
 var errorImage = document.querySelector('.error-image');
-
+var startButton = document.querySelector('.start-button');
 
 var pastActivity = [];
 var currentActivity;
-
-// for (var i = 0; i < activityButtons.length; i++) {
-//   activityButtons[i].addEventListener('click', buttonColorizer);
-// };
 
 studyButton.addEventListener('click', buttonColorizer);
 meditateButton.addEventListener('click', buttonColorizer);
 exerciseButton.addEventListener('click', buttonColorizer);
 startActivityButton.addEventListener('click', chooseActivity);
-
+startButton.addEventListener('click', liveTimer);
 
 function buttonColorizer(event) {
   if (event.target === studyButton || event.target === studyText || event.target === studyImage) {
@@ -77,9 +73,6 @@ function chooseActivity() {
     displayCountDown();
     displayHandler();
   }
-
-
-// console.log(activity);
 }
 
 function displayHandler() {
@@ -97,16 +90,19 @@ function displayCountDown() {
 }
 
 function inputValidator() {
-    if (descriptionChosen.value == '' || minutesChosen.value == '' || secondsChosen.value == '') {
+  if (descriptionChosen.value == '' || minutesChosen.value == '' || secondsChosen.value == '') {
       errorContainer.classList.remove('hidden');
-    }
+    };
+    buttonValidator();
+}
 
-  for (var i = 0; i < buttonTags.length; i++) {
-    if (buttonTags[i].classList.contains('selected')) {
-      return
-
-  } else {
-      errorContainer.classList.remove('hidden');
-    }
+function buttonValidator() {
+  if (!studyButton.classList.contains('selected') && !meditateButton.classList.contains('selected')
+    && !exerciseButton.classList.contains('selected')) {
+    errorContainer.classList.remove('hidden');
   }
+}
+
+function liveTimer() {
+  currentActivity.countdown();
 }
