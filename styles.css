@@ -47,7 +47,6 @@ section {
   padding-bottom: 5px;
 }
 
-
 .left-panel {
   display: flex;
   flex-direction: column;
@@ -157,7 +156,7 @@ img {
 }
 
 .middle-box {
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin-top: 60px;
 }
@@ -205,6 +204,36 @@ input {
 .right-text {
   color: #CBC9CF;
   text-align: center;
+}
+.completed-activities {
+  background-color: #46424D;
+  margin: 0 20px 0 20px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border-right: 2px solid #C278FD;
+  /* box-shadow: inset 0 0 0 5px #C278FD; */
+  box-sizing: border-box;
+  /* outline: 4px solid #46424D; */
+  outline-offset: 4px;
+}
+
+.past-category {
+  color: #FFF;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  margin: 3px 0 0 3px;
+  font-size: 15px;
+}
+.logged-time {
+  color: #CBC9CF;
+  margin: 0 3px 0 3px;
+  font-size: 14px;
+}
+.past-description {
+  color: #CBC9CF;
+  margin: 5px 3px 0 3px;
+  font-size: 12px;
 }
 .hidden {
   display: none !important;

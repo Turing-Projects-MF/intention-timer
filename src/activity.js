@@ -21,12 +21,15 @@ class Activity {
         clearInterval(timeConvert);
         document.querySelector('h1').innerHTML = "EXPIRED";
         alert `Time's up! Nice work!`;
+        document.querySelector('.start-button').innerHTML = 'COMPLETE!';
+        this.markComplete();
       }
     }, 1000);
   }
 
   markComplete() {
-
+    // document.querySelector('.start-button').innerHTML = 'COMPLETE!';
+    this.completed = true;
   }
   saveToStorage() {
 
