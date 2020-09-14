@@ -131,12 +131,18 @@ function displayPastActivities() {
       </div>
       `;
       loggedActivities += updateDom
-  } loggedPastActivities.innerHTML = loggedActivities
+  }   clearTimerView()
+      loggedPastActivities.innerHTML = loggedActivities
+}
+
+function clearTimerView() {
+  createContainer.classList.remove('hidden');
+  timerPanel.classList.add('hidden');
 }
 
 function refreshActivities() {
-  createContainer.classList.add('.hidden');
-  leftPanel.classList.remove('.hidden');
+  createContainer.classList.add('hidden');
+  leftPanel.classList.remove('hidden');
 }
 //Add Hidden on loggedActivities button click
 //remove hidden from create button

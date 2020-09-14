@@ -55,7 +55,7 @@ section {
   padding: 0 75px 0 75px;
   height: 100%
 }
-.timer-panel, .create-button  {
+.timer-panel, .create  {
   display: flex;
   flex-direction: column;
   background-color: #46424D;
@@ -70,7 +70,6 @@ section {
 
 .create {
   padding-top: 70px;
-  display: flex;
 }
 
 .create-button {
