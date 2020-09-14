@@ -68,12 +68,12 @@ section {
   height: 100%;
 }
 
-.create-button {
+.create {
   padding-top: 70px;
   display: flex;
 }
 
-.create {
+.create-button {
   width: 40%;
   align-self: center;
   border-radius: 5px;

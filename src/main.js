@@ -25,6 +25,8 @@ var startButton = document.querySelector('.start-button');
 var leftTitle = document.querySelector('#left-title');
 var loggedPastActivities = document.querySelector('.logged-activities');
 var logActivityButton = document.querySelector('.log-activity-button');
+var createActivityButton = document.querySelector('.create-button');
+var createContainer = document.querySelector('.create');
 
 var pastActivity = [];
 var currentActivity;
@@ -35,6 +37,7 @@ exerciseButton.addEventListener('click', buttonColorizer);
 startActivityButton.addEventListener('click', chooseActivity);
 startButton.addEventListener('click', liveTimer);
 logActivityButton.addEventListener('click', displayPastActivities );
+createActivityButton.addEventListener('click', refreshActivities);
 
 
 function buttonColorizer(event) {
@@ -130,3 +133,10 @@ function displayPastActivities() {
       loggedActivities += updateDom
   } loggedPastActivities.innerHTML = loggedActivities
 }
+
+function refreshActivities() {
+  createContainer.classList.add('.hidden');
+  leftPanel.classList.remove('.hidden');
+}
+//Add Hidden on loggedActivities button click
+//remove hidden from create button
