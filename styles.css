@@ -236,6 +236,19 @@ input {
   width: 3px;
   height: 20%;
 }
+
+.right-border.study {
+  border-right: 4px solid #B3FD78;
+}
+
+.right-border.meditate {
+  border-right: 4px solid #C278FD;
+}
+
+.right-border.exercise {
+  border-right: 4px solid #FD8078;
+}
+
 .past-category {
   color: #FFF;
   font-family: sans-serif;
