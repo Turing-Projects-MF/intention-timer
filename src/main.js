@@ -23,6 +23,10 @@ var errorMessage = document.querySelector('.error-message');
 var errorImage = document.querySelector('.error-image');
 var startButton = document.querySelector('.start-button');
 var leftTitle = document.querySelector('#left-title');
+var loggedPastActivities = document.querySelector('.logged-activities');
+var logActivityButton = document.querySelector('.log-activity-button');
+var createActivityButton = document.querySelector('.create-button');
+var createContainer = document.querySelector('.create');
 
 var pastActivity = [];
 var currentActivity;
@@ -32,6 +36,9 @@ meditateButton.addEventListener('click', buttonColorizer);
 exerciseButton.addEventListener('click', buttonColorizer);
 startActivityButton.addEventListener('click', chooseActivity);
 startButton.addEventListener('click', liveTimer);
+logActivityButton.addEventListener('click', displayPastActivities );
+createActivityButton.addEventListener('click', refreshActivities);
+
 
 function buttonColorizer(event) {
   if (event.target === studyButton || event.target === studyText || event.target === studyImage) {
@@ -69,7 +76,7 @@ function chooseActivity() {
   var minutesInput = minutesChosen.value;
   var secondsInput = secondsChosen.value;
   currentActivity = new Activity(activityInput, descriptionInput, minutesInput, secondsInput);
-  pastActivity.push(currentActivity);
+  // pastActivity.push(currentActivity);
   if (errorContainer.classList.contains('hidden')) {
     displayCountDown();
     displayHandler();
@@ -108,3 +115,34 @@ function buttonValidator() {
 function liveTimer() {
   currentActivity.countdown();
 }
+
+function displayPastActivities() {
+  pastActivity.push(currentActivity);
+  var loggedActivities = ''
+  var updateDom;
+  for (var i  = 0; i < pastActivity.length; i++) {
+    updateDom =
+    `
+      <div class="completed-activities">
+        <div class="right-border ${pastActivity[i].category}"></div>
+        <p class="past-category">${pastActivity[i].category}</p>
+        <p class="logged-time">${pastActivity[i].minutes}:${pastActivity[i].seconds}</p>
+        <p class="past-description">${pastActivity[i].description}</p>
+      </div>
+      `;
+      loggedActivities += updateDom
+  }   clearTimerView()
+      loggedPastActivities.innerHTML = loggedActivities
+}
+
+function clearTimerView() {
+  createContainer.classList.remove('hidden');
+  timerPanel.classList.add('hidden');
+}
+
+function refreshActivities() {
+  createContainer.classList.add('hidden');
+  leftPanel.classList.remove('hidden');
+}
+//Add Hidden on loggedActivities button click
+//remove hidden from create button
