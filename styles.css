@@ -201,21 +201,26 @@ input {
   margin-top: 50px;
   border-radius: 5px;
 }
+.log-activity-button {
+  align-self: center;
+  margin-top: 30px;
+  width: 25%;
+  height: 30px;
+  border-radius: 5px;
+  border-style: none;
+  color: #26222D;
+}
 .right-text {
   color: #CBC9CF;
   text-align: center;
 }
 .completed-activities {
   background-color: #46424D;
-  margin: 0 20px 0 20px;
+  margin: 0 20px 15px 20px;
   padding: 5px;
   border-radius: 5px;
   margin-top: 10px;
   position: relative;
-  /* box-shadow: inset 0 0 0 5px #C278FD; */
-  /* box-sizing: border-box; */
-  /* outline: 4px solid #46424D; */
-  /* outline-offset: 4px; */
 }
 .right-border {
   background-color: #46424D;

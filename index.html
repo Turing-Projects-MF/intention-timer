@@ -8,7 +8,7 @@
     <main>
       <section>
         <p class="panel-title" id="left-title">New Activity</p>
-        <div class="left-panel">
+        <div class="left-panel hidden">
           <h3 class="category-choice">Select a category:</h3>
           <div class="button-box">
             <button class="study-button" value="Study">
@@ -44,10 +44,11 @@
           </div>
           <button class="start-activity-button">START ACTIVITY</button>
         </div>
-        <div class="timer-panel hidden">
+        <div class="timer-panel">
           <p id='activity-description'>Deep Breathing</p>
           <h1></h1>
           <button class="start-button">START</button>
+          <button class="log-activity-button">LOG ACTIVITY</button>
         </div>
       </section>
 
@@ -55,6 +56,12 @@
         <p class="panel-title">Past Activities</p>
         <p class="right-text hidden">You haven't logged any activities yet.<br>
         Complete the form to the left to get started!</p>
+        <div class="completed-activities">
+          <div class="right-border"></div>
+          <p class="past-category">Meditate</p>
+          <p class="logged-time">5 MIN</p>
+          <p class="past-description">Deep Breathing</p>
+        </div>
         <div class="completed-activities">
           <div class="right-border"></div>
           <p class="past-category">Meditate</p>
