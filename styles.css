@@ -55,7 +55,7 @@ section {
   padding: 0 75px 0 75px;
   height: 100%
 }
-.timer-panel  {
+.timer-panel, .create-button  {
   display: flex;
   flex-direction: column;
   background-color: #46424D;
@@ -67,6 +67,21 @@ section {
   margin-bottom: 50px;
   height: 100%;
 }
+
+.create-button {
+  padding-top: 70px;
+  display: flex;
+}
+
+.create {
+  width: 40%;
+  align-self: center;
+  border-radius: 5px;
+  height: 5%;
+  border-style: none;
+  color: #46424D;
+}
+
 h1 {
   color: #FFF;
   text-align: center;
