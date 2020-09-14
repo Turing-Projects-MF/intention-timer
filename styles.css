@@ -47,7 +47,6 @@ section {
   padding-bottom: 5px;
 }
 
-
 .left-panel {
   display: flex;
   flex-direction: column;
@@ -157,7 +156,7 @@ img {
 }
 
 .middle-box {
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin-top: 60px;
 }
@@ -202,9 +201,57 @@ input {
   margin-top: 50px;
   border-radius: 5px;
 }
+.log-activity-button {
+  align-self: center;
+  margin-top: 30px;
+  width: 25%;
+  height: 30px;
+  border-radius: 5px;
+  border-style: none;
+  color: #26222D;
+}
 .right-text {
   color: #CBC9CF;
   text-align: center;
+}
+.completed-activities {
+  background-color: #46424D;
+  margin: 0 20px 15px 20px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  position: relative;
+}
+.right-border {
+  background-color: #46424D;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 1px;
+  margin-top: 10px;
+  border-right: 4px solid #C278FD;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  top: 0;
+  width: 3px;
+  height: 20%;
+}
+.past-category {
+  color: #FFF;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  margin: 3px 0 0 3px;
+  font-size: 15px;
+}
+.logged-time {
+  color: #CBC9CF;
+  margin: 0 3px 0 3px;
+  font-size: 14px;
+}
+.past-description {
+  color: #CBC9CF;
+  margin: 5px 3px 0 3px;
+  font-size: 12px;
 }
 .hidden {
   display: none !important;
