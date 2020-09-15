@@ -16,7 +16,7 @@ var timerPanel = document.querySelector('.timer-panel');
 var leftPanel = document.querySelector('.left-panel');
 var currentTimer = document.querySelector('h1');
 var activityDescription = document.querySelector('#activity-description');
-var inputFields = document.getElementsByTagName('input');
+var inputFields = document.querySelectorAll('input');
 var buttonTags = document.getElementsByTagName('button');
 var errorContainer = document.querySelector('.error-container');
 var errorMessage = document.querySelector('.error-message');
@@ -28,7 +28,8 @@ var logActivityButton = document.querySelector('.log-activity-button');
 var createActivityButton = document.querySelector('.create-button');
 var createContainer = document.querySelector('.create');
 
-var pastActivity = [];
+
+var pastActivity = JSON.parse(localStorage.getItem('pastActivities')) || [];
 var currentActivity;
 
 studyButton.addEventListener('click', buttonColorizer);
@@ -38,6 +39,7 @@ startActivityButton.addEventListener('click', chooseActivity);
 startButton.addEventListener('click', liveTimer);
 logActivityButton.addEventListener('click', displayPastActivities );
 createActivityButton.addEventListener('click', refreshActivities);
+window.onload = displayStoredActivities
 
 
 function buttonColorizer(event) {
@@ -86,6 +88,7 @@ function chooseActivity() {
 function displayHandler() {
   timerPanel.classList.remove('hidden');
   leftPanel.classList.add('hidden');
+  startButton.innerHTML = 'START';
 }
 
 function displayCountDown() {
@@ -118,6 +121,8 @@ function liveTimer() {
 
 function displayPastActivities() {
   pastActivity.push(currentActivity);
+  currentActivity.markComplete();
+  currentActivity.saveToStorage();
   var loggedActivities = ''
   var updateDom;
   for (var i  = 0; i < pastActivity.length; i++) {
@@ -131,18 +136,48 @@ function displayPastActivities() {
       </div>
       `;
       loggedActivities += updateDom
-  }   clearTimerView()
-      loggedPastActivities.innerHTML = loggedActivities
+  }
+      clearTimerView();
+      loggedPastActivities.innerHTML = loggedActivities;
+
 }
 
 function clearTimerView() {
   createContainer.classList.remove('hidden');
   timerPanel.classList.add('hidden');
+  leftTitle.innerHTML = 'Completed Activity';
 }
 
 function refreshActivities() {
   createContainer.classList.add('hidden');
   leftPanel.classList.remove('hidden');
+  buttonUnColorizer();
+  resetFormInputs();
 }
-//Add Hidden on loggedActivities button click
-//remove hidden from create button
+function resetFormInputs() {
+  for (var i = 0; i < inputFields.length; i++) {
+    inputFields[i].value = '';
+  }
+}
+function displayStoredActivities() {
+  // var getLocalStorage = localStorage.getItem('pastActivities');
+  // var unStringifyStorage = JSON.parse(getLocalStorage);
+  // pastActivity = unStringifyStorage;
+  if (pastActivity.length > 0) {
+
+    var loggedActivities = '';
+    var updateDom;
+    for (var i  = 0; i < pastActivity.length; i++) {
+      updateDom =
+      `
+      <div class="completed-activities">
+      <div class="right-border ${pastActivity[i].category}"></div>
+      <p class="past-category">${pastActivity[i].category}</p>
+      <p class="logged-time">${pastActivity[i].minutes}:${pastActivity[i].seconds}</p>
+      <p class="past-description">${pastActivity[i].description}</p>
+      </div>
+      `;
+      loggedActivities += updateDom
+    } loggedPastActivities.innerHTML = loggedActivities;
+  }
+}

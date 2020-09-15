@@ -27,10 +27,10 @@ class Activity {
   }
 
   markComplete() {
-    // document.querySelector('.start-button').innerHTML = 'COMPLETE!';
     this.completed = true;
   }
   saveToStorage() {
-
+    var stringifiedActivities = JSON.stringify(pastActivity);
+    localStorage.setItem('pastActivities', stringifiedActivities);
   }
 }
