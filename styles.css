@@ -104,12 +104,19 @@ h1 {
   color: #CBC9CF;
   outline: none;
   box-shadow: none;
-  border-color: #C278FD;
   border-style: solid;
   align-self: center;
   font-size: 18px;
 }
-
+.start-study {
+  border-color: #B3FD78;
+}
+.start-meditate {
+  border-color: #C278FD;
+}
+.start-exercise {
+  border-color: #FD8078;
+}
 .start-button:active {
   transform: translateY(4px);
 }
