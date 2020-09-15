@@ -16,7 +16,7 @@ var timerPanel = document.querySelector('.timer-panel');
 var leftPanel = document.querySelector('.left-panel');
 var currentTimer = document.querySelector('h1');
 var activityDescription = document.querySelector('#activity-description');
-var inputFields = document.getElementsByTagName('input');
+var inputFields = document.querySelectorAll('input');
 var buttonTags = document.getElementsByTagName('button');
 var errorContainer = document.querySelector('.error-container');
 var errorMessage = document.querySelector('.error-message');
@@ -86,6 +86,7 @@ function chooseActivity() {
 function displayHandler() {
   timerPanel.classList.remove('hidden');
   leftPanel.classList.add('hidden');
+  startButton.innerHTML = 'START';
 }
 
 function displayCountDown() {
@@ -131,18 +132,26 @@ function displayPastActivities() {
       </div>
       `;
       loggedActivities += updateDom
-  }   clearTimerView()
+  }
+      clearTimerView()
       loggedPastActivities.innerHTML = loggedActivities
+
 }
 
 function clearTimerView() {
   createContainer.classList.remove('hidden');
   timerPanel.classList.add('hidden');
+  leftTitle.innerHTML = 'Completed Activity';
 }
 
 function refreshActivities() {
   createContainer.classList.add('hidden');
   leftPanel.classList.remove('hidden');
+  buttonUnColorizer();
+  resetFormInputs();
 }
-//Add Hidden on loggedActivities button click
-//remove hidden from create button
+function resetFormInputs() {
+  for (var i = 0; i < inputFields.length; i++) {
+    inputFields[i].value = '';
+  }
+}
