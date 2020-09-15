@@ -119,6 +119,8 @@ function liveTimer() {
 
 function displayPastActivities() {
   pastActivity.push(currentActivity);
+  currentActivity.markComplete();
+  currentActivity.saveToStorage();
   var loggedActivities = ''
   var updateDom;
   for (var i  = 0; i < pastActivity.length; i++) {
@@ -133,8 +135,8 @@ function displayPastActivities() {
       `;
       loggedActivities += updateDom
   }
-      clearTimerView()
-      loggedPastActivities.innerHTML = loggedActivities
+      clearTimerView();
+      loggedPastActivities.innerHTML = loggedActivities;
 
 }
 
