@@ -19,7 +19,7 @@ class Activity {
       document.querySelector('h1').innerHTML = `${addZeroMin}:${addZeroSec}`;
       if (remainingTime < 0) {
         clearInterval(timeConvert);
-        document.querySelector('h1').innerHTML = "EXPIRED";
+        document.querySelector('h1').innerHTML = "YOU DID IT!!";
         alert `Time's up! Nice work!`;
         document.querySelector('.start-button').innerHTML = 'COMPLETE!';
       }
