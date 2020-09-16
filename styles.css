@@ -1,13 +1,3 @@
-/* Main background: #2B2733
-Text on main background: #CBC9CF
-Header, cards: #46424D
-Card shadow: #26222D
-Text on header and cards: #FFF
-Study: #B3FD78
-Meditate: #C278FD
-Exercise: #FD8078
-Error: #EFB7EC
-font-family: 'Montserrat', sans-serif; */
 html {
   font-family: 'Montserrat', sans-serif;
 }
@@ -42,9 +32,7 @@ section {
   color: #CBC9CF;
   font-size: 21px;
   margin: 0;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 5px;
+  padding: 20px 0 5px 20px;
 }
 
 .left-panel {
@@ -55,16 +43,13 @@ section {
   padding: 0 75px 0 75px;
   height: 100%
 }
+
 .timer-panel, .create  {
   display: flex;
   flex-direction: column;
   background-color: #46424D;
-  margin: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding-left: 75px;
-  padding-right: 75px;
-  margin-bottom: 50px;
+  margin: 10px 20px 50px 20px;
+  padding: 0 75px 0 75px;
   height: 100%;
 }
 
@@ -96,6 +81,7 @@ h1 {
   margin: 30px 0 5px 0;
 
 }
+
 .start-button {
   border-radius: 50%;
   height: 160px;
@@ -104,10 +90,21 @@ h1 {
   color: #CBC9CF;
   outline: none;
   box-shadow: none;
-  border-color: #C278FD;
   border-style: solid;
   align-self: center;
   font-size: 18px;
+}
+
+.start-study {
+  border-color: #B3FD78;
+}
+
+.start-meditate {
+  border-color: #C278FD;
+}
+
+.start-exercise {
+  border-color: #FD8078;
 }
 
 .start-button:active {
@@ -137,24 +134,28 @@ header {
   width: 150px;
   height: 65px;
 }
+
 .study-style {
   border-color: #B3FD78;
   color: #B3FD78;
   outline: none;
   box-shadow: none;
 }
+
 .meditate-style {
   border-color: #C278FD;
   color: #C278FD;
   outline: none;
   box-shadow: none;
 }
+
 .exercise-style {
   border-color: #FD8078;
   color: #FD8078;
   outline: none;
   box-shadow: none;
 }
+
 h4 {
   margin: 5px 0 0 0;
 }
@@ -215,6 +216,7 @@ input {
   margin-top: 50px;
   border-radius: 5px;
 }
+
 .log-activity-button {
   align-self: center;
   margin-top: 30px;
@@ -224,18 +226,20 @@ input {
   border-style: none;
   color: #26222D;
 }
+
 .right-text {
   color: #CBC9CF;
   text-align: center;
 }
+
 .completed-activities {
   background-color: #46424D;
-  margin: 0 20px 15px 20px;
+  margin: 10px 20px 15px 20px;
   padding: 5px;
   border-radius: 5px;
-  margin-top: 10px;
   position: relative;
 }
+
 .right-border {
   background-color: #46424D;
   margin-right: 10px;
@@ -270,16 +274,19 @@ input {
   margin: 3px 0 0 3px;
   font-size: 15px;
 }
+
 .logged-time {
   color: #CBC9CF;
   margin: 0 3px 0 3px;
   font-size: 14px;
 }
+
 .past-description {
   color: #CBC9CF;
   margin: 5px 3px 0 3px;
   font-size: 12px;
 }
+
 .hidden {
   display: none !important;
 }
@@ -287,8 +294,7 @@ input {
 .error-image {
   height: 20px;
   width: 20px;
-  margin-top: 14px;
-  margin-right: 10px;
+  margin: 14px 10px 0 0;
 }
 
 .error-container {

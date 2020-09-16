@@ -27,7 +27,7 @@ var loggedPastActivities = document.querySelector('.logged-activities');
 var logActivityButton = document.querySelector('.log-activity-button');
 var createActivityButton = document.querySelector('.create-button');
 var createContainer = document.querySelector('.create');
-
+var rightText = document.querySelector('.right-text');
 
 var pastActivity = JSON.parse(localStorage.getItem('pastActivities')) || [];
 var currentActivity;
@@ -37,10 +37,17 @@ meditateButton.addEventListener('click', buttonColorizer);
 exerciseButton.addEventListener('click', buttonColorizer);
 startActivityButton.addEventListener('click', chooseActivity);
 startButton.addEventListener('click', liveTimer);
-logActivityButton.addEventListener('click', displayPastActivities );
+logActivityButton.addEventListener('click', logActivityHandler);
 createActivityButton.addEventListener('click', refreshActivities);
-window.onload = displayStoredActivities
+window.onload = onloadHandler;
 
+function onloadHandler() {
+  if (!Object.keys(pastActivity).length) {
+    rightText.classList.remove('hidden');
+  } if (Object.keys(pastActivity).length > 0) {
+    displayPastActivities();
+  }
+}
 
 function buttonColorizer(event) {
   if (event.target === studyButton || event.target === studyText || event.target === studyImage) {
@@ -78,10 +85,20 @@ function chooseActivity() {
   var minutesInput = minutesChosen.value;
   var secondsInput = secondsChosen.value;
   currentActivity = new Activity(activityInput, descriptionInput, minutesInput, secondsInput);
-  // pastActivity.push(currentActivity);
   if (errorContainer.classList.contains('hidden')) {
+    startTimerColor();
     displayCountDown();
     displayHandler();
+  };
+}
+
+function startTimerColor() {
+  if (currentActivity.category === 'Study') {
+    startButton.classList.add('start-study');
+  } else if (currentActivity.category === 'Meditate') {
+    startButton.classList.add('start-meditate');
+  } else {
+    startButton.classList.add('start-exercise');
   }
 }
 
@@ -93,6 +110,7 @@ function displayHandler() {
 
 function displayCountDown() {
   leftTitle.innerHTML = 'Current Activity';
+  rightText.classList.add('hidden');
   var timerActivity = `${currentActivity.description}`;
   activityDescription.innerHTML = timerActivity;
   var minutes = currentActivity.minutes < 10 ? "0" + currentActivity.minutes : currentActivity.minutes;
@@ -120,26 +138,39 @@ function liveTimer() {
 }
 
 function displayPastActivities() {
-  pastActivity.push(currentActivity);
-  currentActivity.markComplete();
-  currentActivity.saveToStorage();
+  var minutes;
+  var seconds;
+  var countdown;
   var loggedActivities = ''
   var updateDom;
   for (var i  = 0; i < pastActivity.length; i++) {
+    minutes = pastActivity[i].minutes < 10 ? "0" + pastActivity[i].minutes : pastActivity[i].minutes;
+    seconds = pastActivity[i].seconds < 10 ? "0" + pastActivity[i].seconds : pastActivity[i].seconds;
+    countDown = `${minutes}:${seconds}`;
     updateDom =
     `
       <div class="completed-activities">
         <div class="right-border ${pastActivity[i].category}"></div>
         <p class="past-category">${pastActivity[i].category}</p>
-        <p class="logged-time">${pastActivity[i].minutes}:${pastActivity[i].seconds}</p>
+        <p class="logged-time">${minutes}:${seconds}</p>
         <p class="past-description">${pastActivity[i].description}</p>
       </div>
       `;
       loggedActivities += updateDom
   }
-      clearTimerView();
-      loggedPastActivities.innerHTML = loggedActivities;
+  loggedPastActivities.innerHTML = loggedActivities;
+}
 
+function logActivityHandler() {
+  handleCurrentActivity(currentActivity);
+  displayPastActivities();
+  clearTimerView();
+}
+
+function handleCurrentActivity() {
+  pastActivity.push(currentActivity);
+  currentActivity.markComplete();
+  currentActivity.saveToStorage();
 }
 
 function clearTimerView() {
@@ -151,33 +182,20 @@ function clearTimerView() {
 function refreshActivities() {
   createContainer.classList.add('hidden');
   leftPanel.classList.remove('hidden');
+  leftTitle.innerHTML = 'New Activity';
   buttonUnColorizer();
   resetFormInputs();
+  resetTimerColor();
 }
+
+function resetTimerColor() {
+  startButton.classList.remove('start-study');
+  startButton.classList.remove('start-meditate');
+  startButton.classList.remove('start-exercise');
+}
+
 function resetFormInputs() {
   for (var i = 0; i < inputFields.length; i++) {
     inputFields[i].value = '';
-  }
-}
-function displayStoredActivities() {
-  // var getLocalStorage = localStorage.getItem('pastActivities');
-  // var unStringifyStorage = JSON.parse(getLocalStorage);
-  // pastActivity = unStringifyStorage;
-  if (pastActivity.length > 0) {
-
-    var loggedActivities = '';
-    var updateDom;
-    for (var i  = 0; i < pastActivity.length; i++) {
-      updateDom =
-      `
-      <div class="completed-activities">
-      <div class="right-border ${pastActivity[i].category}"></div>
-      <p class="past-category">${pastActivity[i].category}</p>
-      <p class="logged-time">${pastActivity[i].minutes}:${pastActivity[i].seconds}</p>
-      <p class="past-description">${pastActivity[i].description}</p>
-      </div>
-      `;
-      loggedActivities += updateDom
-    } loggedPastActivities.innerHTML = loggedActivities;
   }
 }
