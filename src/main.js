@@ -140,13 +140,11 @@ function liveTimer() {
 function displayPastActivities() {
   var minutes;
   var seconds;
-  var countdown;
   var loggedActivities = ''
   var updateDom;
   for (var i  = 0; i < pastActivity.length; i++) {
     minutes = pastActivity[i].minutes < 10 ? "0" + pastActivity[i].minutes : pastActivity[i].minutes;
     seconds = pastActivity[i].seconds < 10 ? "0" + pastActivity[i].seconds : pastActivity[i].seconds;
-    countDown = `${minutes}:${seconds}`;
     updateDom =
     `
       <div class="completed-activities">
